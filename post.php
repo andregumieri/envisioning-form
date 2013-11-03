@@ -1,4 +1,7 @@
 <?php
+	if(!require('config.php')) die("Arquivo de configuração não localizado.");
+	require('inc/database.php');
+
 	$campos = array();
 
 
@@ -35,4 +38,7 @@
 	 * Insere no Banco de dados
 	 */
 	insere($campos);
+
+
+	header("location: thankyou.php");
 ?>

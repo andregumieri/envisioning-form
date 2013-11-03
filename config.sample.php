@@ -15,7 +15,7 @@
 	 * DB_PASSWORD
 	 * Senha do banco de dados MySQL
 	 */
-	define('DB_USER', '123mudar');
+	define('DB_PASSWORD', '123mudar');
 
 	/**
 	 * DB_BASE

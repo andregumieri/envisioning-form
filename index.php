@@ -44,8 +44,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="txtEmail" class="control-label">Your email</label>
-						<input type="email" class="form-control" id="txtEmail" name="email" />
+						<label for="txtEmail" class="control-label">Your email <span class="label label-default">required</span></label>
+						<input type="email" class="form-control required" id="txtEmail" name="email" />
 					</div>
 
 					<div class="form-group">
@@ -164,7 +164,7 @@
 			})
 		};
 
-		document.getElementById('formulario').onsubmit = function() {
+		document.getElementById('formulario').onsubmit = function(e) {
 			var allowedTags = ['input', 'textarea'];
 			var disallowedInputTypes = ['checkbox', 'radio'];
 			var allOk = true;
@@ -176,6 +176,14 @@
 					setErro($(this));
 				}
 			});
+
+			// Valida E-mail
+			var $email = $(this).find("input[name=email]");
+			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			if(!re.test($email.val())) {
+				allOk = false;
+				setErro($email);
+			}
 			
 			return allOk;
 		};
