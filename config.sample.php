@@ -29,4 +29,16 @@
 	 */
 	define('ADMIN_USER', 'admin');
 	define('ADMIN_PASS', '123mudar');
+
+	/**
+	 * MCHIMP_APIKEY
+	 * Api Key do Mailchimp
+	 */
+	define('MCHIMP_APIKEY', '');
+
+	/**
+	 * MCHIMP_LISTID
+	 * Encontra em Lists > Lista desejada > Settings > List name & Defaults
+	 */
+	define('MCHIMP_LISTID', '');
 ?>

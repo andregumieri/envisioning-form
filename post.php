@@ -1,6 +1,7 @@
 <?php
 	if(!require('config.php')) die("Arquivo de configuração não localizado.");
 	require('inc/database.php');
+	require('inc/mailchimp-api/MailChimp.class.php');
 
 	$campos = array();
 
@@ -34,11 +35,29 @@
 	$campos[] = adiciona("linksurl");
 
 
+
+	/** PARE DE MEXER A PARTIR DAQUI **/
+
+
 	/**
 	 * Insere no Banco de dados
 	 */
-	insere($campos);
+	$cadastro_id = insere($campos);
 
+
+	/**
+	 * Insere no mailchimp
+	 */
+	$MailChimp = new MailChimp(MCHIMP_APIKEY);
+	$result = $MailChimp->call("lists/subscribe", array(
+		'id' => MCHIMP_LISTID,
+		'email' => array('email'=>$_POST["email"]),
+		'merge_vars' => array('FNAME'=>$_POST['firstname'], 'LNAME'=>$_POST['lastname']),
+		'double_optin' => false,
+		'update_existing' => false,
+		'replace_interests' => false,
+		'send_welcome'      => false
+	));
 
 	header("location: thankyou.php");
 ?>

@@ -60,7 +60,7 @@
 				} else {
 					$sql = "INSERT INTO `tags` (`tag`) VALUES ('{$tag}')";
 					mysqli_query($DB, $sql);
-					$ids[] = mysqli_insert_id();
+					$ids[] = mysqli_insert_id($DB);
 				}
 			}
 
@@ -76,11 +76,6 @@
 			}
 		}
 
-
-		/*echo "<pre>";
-		print_r($associaTags);
-		print_r($DB_CAMPOS_TAGS);
-		print_r($DB_CAMPOS_CADASTROS);
-		echo "</pre>";*/
+		return $cadastro_id;
 	}
 ?>
