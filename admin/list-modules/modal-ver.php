@@ -122,17 +122,19 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">Anotações</div>
 						<div class="panel-body">
-							<form role="form" method="post" action="list.php">
+							<form role="form">
 								<div class="form-group">
 									<textarea class="form-control" rows="6" name="anotacoes"></textarea>
 								</div>
 
 								<div class="form-group">
-									<button type="submit" class="btn btn-default">Save</button>
+									<button type="button" class="btn btn-default" id="botaoModalVerAnotacoesSalvar">Salvar</button>
 								</div>
 							</form>
 						</div>
 					</div>
+
+					<input type="hidden" name="id" value="" />
 				</div> <!-- .template -->
 				
 			</div> <!-- .modal-body -->

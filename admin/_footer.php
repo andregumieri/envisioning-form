@@ -153,6 +153,42 @@
 				$("body").prepend($containerTags);
 
 			});
+
+
+			/**
+			 * Salvar Anotacoes
+			 */
+			$("#botaoModalVerAnotacoesSalvar").on("click", function() {
+				var $botao = $(this);
+				var $textarea = $botao.parents("form").find("textarea");
+				var id = $botao.parents("div.modal-body").find("input[name=id]").val();
+				var textoOriginal = $botao.text();
+
+				$botao.addClass("disabled").attr("disabled", true).html("Salvando...");
+				$.ajax({
+					url: 'list-webservices/anotacoes.php',
+					data: {id: id, anotacoes: $textarea.val()},
+					type: 'POST',
+					dataType: 'text',
+					success: function(data) {
+						if(data!='ok') {
+							alert("Não foi possível salvar. Tente novamente.");
+							$tr.css("opacity", 1);	
+						} else if(data=='ok') {
+							DataCadastros[id].anotacoes = $textarea.val();
+						}
+						$botao.removeClass("disabled").attr("disabled", false).html(textoOriginal);
+					},
+					error: function() {
+						alert("Não foi possível salvar. Tente novamente.");
+						$tr.css("opacity", 1);	
+						$botao.removeClass("disabled").attr("disabled", false).html(textoOriginal);
+					}
+				});
+			});
+
+
+
 			/**
 			 * Controle Delete
 			 */
