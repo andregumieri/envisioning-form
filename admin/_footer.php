@@ -153,6 +153,34 @@
 				$("body").prepend($containerTags);
 
 			});
+			/**
+			 * Controle Delete
+			 */
+			$("#tabelaCadastros .botaoDeletar").on("click", function() {
+				$botao = $(this);
+				$tr = $botao.parents("tr");
+				if(confirm("Tem certeza que deseja excluir este cadastro?")) {
+					$tr.css("opacity", 0.3);
+					$.ajax({
+						url: 'list-webservices/delete.php',
+						data: {id: $tr.attr("data-cadastro-id")},
+						type: 'POST',
+						dataType: 'text',
+						success: function(data) {
+							if(data!='ok') {
+								alert("Não foi possível deletar. Tente novamente.");
+								$tr.css("opacity", 1);	
+							} else if(data=='ok') {
+								$tr.remove();
+							}
+						},
+						error: function() {
+							alert("Não foi possível deletar. Tente novamente.");
+							$tr.css("opacity", 1);	
+						}
+					});
+				}
+			});
 		});
 	</script>
 </body>

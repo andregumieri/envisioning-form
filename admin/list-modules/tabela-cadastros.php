@@ -31,12 +31,9 @@
 				</small>
 			</td>
 			<!--<td><?php echo date("d/m/Y H:i", strtotime($cadastro['timestamp'])); ?></td>-->
-			<td class="r hidden-xs botoes">
+			<td class="r botoes">
 				<button type="button" class="btn btn-default botaoEditar"><span class="glyphicon glyphicon-pencil"></span></button>
-				<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-			</td>
-			<td class="r visible-xs botoes">
-				<button type="button" class="btn btn-default botaoEditar"><span class="glyphicon glyphicon-pencil"></span></button>
+				<button type="button" class="btn btn-danger botaoDeletar"><span class="glyphicon glyphicon-remove"></span></button>
 			</td>
 		</tr>
 		<?php endforeach; ?>
