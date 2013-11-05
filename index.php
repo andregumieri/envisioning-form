@@ -188,9 +188,21 @@
 			return allOk;
 		};
 
+		$(document).on("blur", '.bootstrap-tagsinput input', function(e) {
+			var $inputFake = $(this);
+			var $input = $(this).parent().siblings("input");
+			if($inputFake.val()!='') {
+				$input.tagsinput("add", $inputFake.val());
+				$inputFake.val("");
+			}
+		});
+
 		$('input.campoDeTags').tagsinput({
 			confirmKeys: [188, 13]
 		});
+
+		
+
 
 		$("#txtYou").limitaPalavras({limite: 140, info: '#txtYouLimit'});
 	});
