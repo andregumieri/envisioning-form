@@ -17,22 +17,22 @@
 	/**
 	 * Adiciona os campos que serão inseridos no banco de dados
 	 */
-	$campos[] = adiciona("firstname");
-	$campos[] = adiciona("lastname");
-	$campos[] = adiciona("email");
-	$campos[] = adiciona("country");
-	$campos[] = adiciona("state");
-	$campos[] = adiciona("city");
-	$campos[] = adiciona("purpose");
-	$campos[] = adicionaTags("passions");
-	$campos[] = adicionaTags("learn");
-	$campos[] = adicionaTags("teach");
-	$campos[] = adicionaTags("related");
-	$campos[] = adiciona("you");
-	$campos[] = adiciona("linkstwitter");
-	$campos[] = adiciona("linkslinkedin");
-	$campos[] = adiciona("linksfacebook");
-	$campos[] = adiciona("linksurl");
+	adiciona("firstname");
+	adiciona("lastname");
+	adiciona("email");
+	adiciona("country");
+	adiciona("state");
+	adiciona("city");
+	adiciona("purpose");
+	adicionaTags("passions");
+	adicionaTags("learn");
+	adicionaTags("teach");
+	adicionaTags("related");
+	adiciona("you");
+	adiciona("linkstwitter");
+	adiciona("linkslinkedin");
+	adiciona("linksfacebook");
+	adiciona("linksurl");
 
 
 	/**********************************/
