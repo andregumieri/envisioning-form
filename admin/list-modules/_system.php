@@ -159,4 +159,21 @@
 	print_r($CADASTROS);
 	echo "</pre>";*/
 
+
+
+
+	/** FUNCOES PARA CAMPO DE BUSCA **/
+	$modalProcurarCamposDeBusca = array();
+	function adicionaCampoDeBusca($campo=null, $titulo=null) {
+		global $modalProcurarCamposDeBusca;
+		if(!is_null($campo)) {
+			if(is_null($titulo)) $titulo = $campo;
+			$modalProcurarCamposDeBusca[] = array("campo"=>$campo, "titulo"=>$titulo);	
+		} else {
+			$modalProcurarCamposDeBusca[] = null;
+		}
+		
+	}
+
+
 ?>
