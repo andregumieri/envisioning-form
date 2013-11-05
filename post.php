@@ -59,16 +59,18 @@
 	/**
 	 * Insere no mailchimp
 	 */
-	$MailChimp = new MailChimp(MCHIMP_APIKEY);
-	$result = $MailChimp->call("lists/subscribe", array(
-		'id' => MCHIMP_LISTID,
-		'email' => array('email'=>$_POST["email"]),
-		'merge_vars' => array('FNAME'=>$_POST['firstname'], 'LNAME'=>$_POST['lastname']),
-		'double_optin' => false,
-		'update_existing' => false,
-		'replace_interests' => false,
-		'send_welcome'      => false
-	));
+	if(MCHIMP_APIKEY!='' && MCHIMP_LISTID!='') {
+		$MailChimp = new MailChimp(MCHIMP_APIKEY);
+		$result = $MailChimp->call("lists/subscribe", array(
+			'id' => MCHIMP_LISTID,
+			'email' => array('email'=>$_POST["email"]),
+			'merge_vars' => array('FNAME'=>$_POST['firstname'], 'LNAME'=>$_POST['lastname']),
+			'double_optin' => false,
+			'update_existing' => false,
+			'replace_interests' => false,
+			'send_welcome'      => false
+		));
+	}
 
 	header("location: thankyou.php");
 ?>
