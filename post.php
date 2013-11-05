@@ -35,8 +35,19 @@
 	$campos[] = adiciona("linksurl");
 
 
-
+	/**********************************/
 	/** PARE DE MEXER A PARTIR DAQUI **/
+	/**********************************/
+
+
+
+	/**
+	 * Normaliza os links
+	 */
+	$DB_CAMPOS_CADASTROS['linkstwitter'] = preg_replace("/(http[s]?:\/\/)?(www\.)?twitter.com\//i", "", $DB_CAMPOS_CADASTROS['linkstwitter']);
+	$DB_CAMPOS_CADASTROS['linkslinkedin'] = preg_replace("/(http[s]?:\/\/)?([A-z]*\.)?linkedin.com\/(in\/)?/i", "", $DB_CAMPOS_CADASTROS['linkslinkedin']);
+	$DB_CAMPOS_CADASTROS['linksfacebook'] = preg_replace("/(http[s]?:\/\/)?([A-z]*\.)?facebook.com(\.[A-z]*)?\//i", "", $DB_CAMPOS_CADASTROS['linksfacebook']);
+	$DB_CAMPOS_CADASTROS['linksurl'] = preg_replace("/http[s]?:\/\//i", "", $DB_CAMPOS_CADASTROS['linksurl']);
 
 
 	/**

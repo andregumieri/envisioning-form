@@ -114,7 +114,17 @@
 							}
 							$campo.html(htmlTags);
 						} else {
-							$campo.html(Cadastro[campo]);
+							var valorCampo = Cadastro[campo];
+							if(campo=='linkstwitter') {
+								valorCampo = '<a href="https://twitter.com/' + valorCampo + '" target="_blank">' + valorCampo + "</a>";
+							} else if(campo=='linksfacebook') {
+								valorCampo = '<a href="https://facebook.com/' + valorCampo + '" target="_blank">' + valorCampo + "</a>";
+							} else if(campo=='linkslinkedin') {
+								valorCampo = '<a href="http://www.linkedin.com/in/' + valorCampo + '" target="_blank">' + valorCampo + "</a>";
+							} else if(campo=='linksurl') {
+								valorCampo = '<a href="http://' + valorCampo + '" target="_blank">' + valorCampo + "</a>";
+							}
+							$campo.html(valorCampo);
 						}
 					} else if($campo.is("input") || $campo.is("textarea")) {
 						if(typeof Cadastro[campo]=='object') {

@@ -117,6 +117,34 @@
 								<p class="form-control-static" name="you">Resize your browser window and you’ll see some amazing transformations in the layout of the webpage. It adjusts to the size of the window. You will also notice that the menu bar is hiding automatically into a nice touch-compatible menu.</p>
 							</div>
 						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Twitter</label>
+							<div class="col-sm-9">
+								<p class="form-control-static" name="linkstwitter">email@example.com</p>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Linkedin</label>
+							<div class="col-sm-9">
+								<p class="form-control-static" name="linkslinkedin">email@example.com</p>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Facebook</label>
+							<div class="col-sm-9">
+								<p class="form-control-static" name="linksfacebook">email@example.com</p>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">URL</label>
+							<div class="col-sm-9">
+								<p class="form-control-static" name="linksurl">email@example.com</p>
+							</div>
+						</div>
 					</form>
 					
 					<div class="panel panel-default">
