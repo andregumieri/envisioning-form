@@ -70,25 +70,25 @@
 
 					<div class="form-group">
 						<label for="txtPassions" class="control-label">Passions</label>
-						<input type="text" class="form-control" id="txtPassions" name="passions" placeholder="Example: traveling, reading, writing" />
+						<input type="text" class="form-control campoDeTags" id="txtPassions" name="passions" placeholder="Example: traveling, reading, writing" />
 						<p class="help-block">Separate your passions using commas.</p>
 					</div>
 
 					<div class="form-group">
 						<label for="txtLearn" class="control-label">What would you like to learn?</label>
-						<input type="text" class="form-control" id="txtLearn" name="learn" placeholder="Example: php, wordpress, rocket science" />
+						<input type="text" class="form-control campoDeTags" id="txtLearn" name="learn" placeholder="Example: php, wordpress, rocket science" />
 						<p class="help-block">Separate what would you like to learn using commas.</p>
 					</div>
 
 					<div class="form-group">
 						<label for="txtTeach" class="control-label">What would you like to teach?</label>
-						<input type="text" class="form-control" id="txtLearn" name="teach" placeholder="Example: arduino, c++, cooking" />
+						<input type="text" class="form-control campoDeTags" id="txtLearn" name="teach" placeholder="Example: arduino, c++, cooking" />
 						<p class="help-block">Separate what would you like to teach using commas.</p>
 					</div>
 
 					<div class="form-group">
 						<label for="txtRelated" class="control-label">Are you related with any industries/fields? Which Ones?</label>
-						<input type="text" class="form-control" id="txtRelated" name="related" placeholder="Example: marketing, internet, biotechnology" />
+						<input type="text" class="form-control campoDeTags" id="txtRelated" name="related" placeholder="Example: marketing, internet, biotechnology" />
 						<p class="help-block">Separate industries/fields using commas.</p>
 					</div>
 
@@ -188,7 +188,7 @@
 			return allOk;
 		};
 
-		$('#txtPassions,#txtLearn,#txtLearn,#txtRelated').tagsinput({
+		$('input.campoDeTags').tagsinput({
 			confirmKeys: [188, 13]
 		});
 
